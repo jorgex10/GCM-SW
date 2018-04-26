@@ -1,0 +1,16 @@
+<h1>Lista de Usuarios</h1>
+<%= link_to "New User", new_user_path, class:"btn btn-success" %>
+<br>
+<br>
+	<table class="table">
+		<thead></thead>
+		<tbody>
+			<% @users.each do |u| %>
+				<tr>
+					<td><%= u.display_name %></td>
+					<td><%= link_to "Ver", user_path(u), class:"btn btn-primary" %></td>
+					<td><%= link_to "Editar", edit_user_path(u), class:"btn btn-primary" %></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
